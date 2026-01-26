@@ -5,18 +5,34 @@ interface Props {
     portofolioValues: string[];
     onPortofolioDelete: (e: SyntheticEvent) => void;
 }
+                //  <CardPortofolio portofolioValues={value} onPortofolioDelete={onPortofolioDelete}/>
 
 const ListPortofolio = ({portofolioValues, onPortofolioDelete}: Props) => {
   return (
     <>
-        <h2>My Portofolio</h2>
-        <ul>
-            {portofolioValues &&
-                portofolioValues.map((value, index) => (
-                 <CardPortofolio portofolioValues={value} onPortofolioDelete={onPortofolioDelete}/>
-                ))
-            }
-        </ul>
+    <section id="portfolio">
+      <h2 className="mb-3 mt-3 text-3xl font-semibold text-center md:text-4xl">
+        My Portfolio
+      </h2>
+      <div className="relative flex flex-col items-center max-w-5xl mx-auto space-y-10 px-10 mb-5 md:px-6 md:space-y-0 md:space-x-7 md:flex-row">
+        <>
+          {portofolioValues.length > 0 ? (
+            portofolioValues.map((portofolioValue) => {
+              return (
+                <CardPortofolio
+                  portofolioValues={portofolioValue}
+                  onPortofolioDelete={onPortofolioDelete}
+                />
+              );
+            })
+          ) : (
+            <h3 className="mb-3 mt-3 text-xl font-semibold text-center md:text-xl">
+              Your portfolio is empty.
+            </h3>
+          )}
+        </>
+      </div>
+    </section>
     </>
   )
 }

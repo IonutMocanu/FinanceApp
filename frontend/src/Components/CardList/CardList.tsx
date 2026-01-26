@@ -13,10 +13,12 @@ const CardList: React.FC<Props> = ({searchResults, onPortofolioCreate}: Props): 
     <div>
       {searchResults.length > 0 ? (
         searchResults.map((result) => (
-          <Card id={result.symbol} key={uuidv4()} searchResults={result} onPortofolioCreate={onPortofolioCreate} />
+          <Card id={result.symbol} key={uuidv4()} searchResult={result} onPortofolioCreate={onPortofolioCreate} />
         ))
       ) : (
-        <div>No companies found</div>
+        <p className="mb-3 mt-3 text-xl font-semibold text-center md:text-xl">
+          No results!
+        </p>
       )}
     </div>
   )
