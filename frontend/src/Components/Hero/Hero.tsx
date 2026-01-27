@@ -1,6 +1,6 @@
 import React from 'react'
 import hero from './hero.png'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 
 interface Props  {

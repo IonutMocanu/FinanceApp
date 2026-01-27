@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from 'react'
 import DeletePortofolio from '../Portofolio/DeletePortofolio/DeletePortofolio';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 interface Props {
     portofolioValues: string;
@@ -22,7 +22,7 @@ const CardPortofolio = ({portofolioValues, onPortofolioDelete}: Props) => {
         portofolioValue={portofolioValues}
         onPortofolioDelete={onPortofolioDelete}
       />
-      
+
     </div>
   </>
   
