@@ -11,7 +11,7 @@ type Company = (typeof data)[0];
 
 const configs = [
     {
-        Label: "Year",
+        label: "Year",
         render: (company: Company) =>company.acceptedDate
     },
     {
